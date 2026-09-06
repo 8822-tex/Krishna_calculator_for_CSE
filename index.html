@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna's Scientific Calculator</title>
+
+    <!-- CSS will be added next -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <!-- SOLAR PANEL -->
+    <div class="solar-panel">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- BRAND -->
+    <div class="brand">
+        <div class="casio">CASIO</div>
+        <div class="model">fx-991ES PLUS</div>
+    </div>
+
+    <!-- DISPLAY -->
+    <div class="display-area">
+        <div id="status">
+            <span id="shift-indicator">SHIFT</span>
+            <span id="alpha-indicator">ALPHA</span>
+            <span id="mode-indicator">DEG</span>
+        </div>
+
+        <div id="display">0</div>
+    </div>
+
+
+    <!-- TOP CONTROL BUTTONS -->
+    <div class="top-controls">
+
+        <button class="small-btn" id="shiftBtn">
+            SHIFT
+        </button>
+
+        <button class="small-btn" id="alphaBtn">
+            ALPHA
+        </button>
+
+        <button class="small-btn" id="modeBtn">
+            MODE
+        </button>
+
+        <button class="small-btn" id="onBtn">
+            ON
+        </button>
+
+    </div>
+
+
+    <!-- REPLAY / NAVIGATION -->
+    <div class="replay-section">
+
+        <button class="replay-btn" data-action="up">▲</button>
+
+        <div class="replay-middle">
+            <button class="replay-btn" data-action="left">◀</button>
+
+            <button class="replay-center">
+                REPLAY
+            </button>
+
+            <button class="replay-btn" data-action="right">▶</button>
+        </div>
+
+        <button class="replay-btn" data-action="down">▼</button>
+
+    </div>
+
+
+    <!-- SCIENTIFIC KEYBOARD -->
+    <div class="scientific-keys">
+
+        <!-- ROW 1 -->
+        <button class="function-key" data-value="log" data-shift="10^">
+            log
+        </button>
+
+        <button class="function-key" data-value="ln" data-shift="e^">
+            ln
+        </button>
+
+        <button class="function-key" data-value="sin" data-shift="sin⁻¹">
+            sin
+        </button>
+
+        <button class="function-key" data-value="cos" data-shift="cos⁻¹">
+            cos
+        </button>
+
+        <button class="function-key" data-value="tan" data-shift="tan⁻¹">
+            tan
+        </button>
+
+
+        <!-- ROW 2 -->
+        <button class="function-key" data-value="x2" data-shift="x3">
+            x²
+        </button>
+
+        <button class="function-key" data-value="sqrt" data-shift="cbrt">
+            √
+        </button>
+
+        <button class="function-key" data-value="power">
+            xʸ
+        </button>
+
+        <button class="function-key" data-value="inverse">
+            x⁻¹
+        </button>
+
+        <button class="function-key" data-value="factorial">
+            x!
+        </button>
+
+
+        <!-- ROW 3 -->
+        <button class="function-key" data-value="fraction">
+            a b/c
+        </button>
+
+        <button class="function-key" data-value="mixed">
+            d/c
+        </button>
+
+        <button class="function-key" data-value="pi">
+            π
+        </button>
+
+        <button class="function-key" data-value="e">
+            e
+        </button>
+
+        <button class="function-key" data-value="hyp">
+            hyp
+        </button>
+
+
+        <!-- ROW 4 -->
+        <button class="function-key" data-value="abs">
+            Abs
+        </button>
+
+        <button class="function-key" data-value="rnd">
+            Rnd
+        </button>
+
+        <button class="function-key" data-value="eng">
+            ENG
+        </button>
+
+        <button class="function-key" data-value="s-d">
+            S↔D
+        </button>
+
+        <button class="function-key" data-value="percent">
+            %
+        </button>
+
+
+        <!-- MEMORY -->
+        <button class="memory-key" data-value="rcl">
+            RCL
+        </button>
+
+        <button class="memory-key" data-value="m-plus">
+            M+
+        </button>
+
+        <button class="memory-key" data-value="m-minus">
+            M−
+        </button>
+
+        <button class="memory-key" data-value="sto">
+            STO
+        </button>
+
+        <button class="memory-key" data-value="ans">
+            Ans
+        </button>
+
+    </div>
+
+
+    <!-- MAIN NUMBER KEYS -->
+    <div class="main-keyboard">
+
+        <!-- ROW 1 -->
+        <button class="number-key" data-value="7">7</button>
+        <button class="number-key" data-value="8">8</button>
+        <button class="number-key" data-value="9">9</button>
+
+        <button class="delete-key" data-action="delete">
+            DEL
+        </button>
+
+        <button class="clear-key" data-action="clear">
+            AC
+        </button>
+
+
+        <!-- ROW 2 -->
+        <button class="number-key" data-value="4">4</button>
+        <button class="number-key" data-value="5">5</button>
+        <button class="number-key" data-value="6">6</button>
+
+        <button class="operator-key" data-value="*">
+            ×
+        </button>
+
+        <button class="operator-key" data-value="/">
+            ÷
+        </button>
+
+
+        <!-- ROW 3 -->
+        <button class="number-key" data-value="1">1</button>
+        <button class="number-key" data-value="2">2</button>
+        <button class="number-key" data-value="3">3</button>
+
+        <button class="operator-key" data-value="+">
+            +
+        </button>
+
+        <button class="operator-key" data-value="-">
+            −
+        </button>
+
+
+        <!-- ROW 4 -->
+        <button class="number-key" data-value="0">
+            0
+        </button>
+
+        <button class="number-key" data-value=".">
+            .
+        </button>
+
+        <button class="function-key" data-value="exp">
+            ×10ˣ
+        </button>
+
+        <button class="function-key" data-value="ans">
+            Ans
+        </button>
+
+        <button class="equals-key" data-action="equals">
+            =
+        </button>
+
+
+        <!-- EXTRA ROW -->
+        <button class="bracket-key" data-value="(">
+            (
+        </button>
+
+        <button class="bracket-key" data-value=")">
+            )
+        </button>
+
+        <button class="function-key" data-value="negate">
+            (−)
+        </button>
+
+        <button class="function-key" data-value="comma">
+            ,
+        </button>
+
+        <button class="function-key" data-value="setup">
+            SETUP
+        </button>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="calculator-footer">
+        <span>SCI</span>
+        <span>COMP</span>
+        <span>STAT</span>
+        <span>TABLE</span>
+    </div>
+
+</div>
+
+
+<!-- JavaScript will be added next -->
+<script src="script.js"></script>
+
+</body>
+</html>
