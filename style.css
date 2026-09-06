@@ -1,0 +1,629 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #d8d1c7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   CALCULATOR BODY
+========================= */
+
+.calculator {
+    width: min(430px, 96vw);
+    padding: 18px 18px 20px;
+    border-radius: 28px 28px 35px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9ca7a9 0%,
+            #d9dddd 22%,
+            #aeb8ba 55%,
+            #7c898c 100%
+        );
+
+    border: 4px solid #526064;
+
+    box-shadow:
+        8px 10px 18px rgba(0, 0, 0, 0.35),
+        inset 2px 2px 4px rgba(255,255,255,0.65),
+        inset -3px -3px 6px rgba(0,0,0,0.25);
+
+    position: relative;
+}
+
+
+/* =========================
+   SOLAR PANEL
+========================= */
+
+.solar-panel {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+
+    width: 112px;
+    height: 34px;
+
+    display: flex;
+
+    border: 2px solid #30383a;
+    border-radius: 5px;
+    overflow: hidden;
+
+    background: #292526;
+}
+
+.solar-panel div {
+    flex: 1;
+
+    border-right: 1px solid #625c5b;
+
+    background:
+        linear-gradient(
+            135deg,
+            #211f1e,
+            #403837
+        );
+}
+
+.solar-panel div:last-child {
+    border-right: none;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.brand {
+    margin-top: 55px;
+    margin-left: 7px;
+    margin-bottom: 7px;
+}
+
+.casio {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #172124;
+}
+
+.model {
+    margin-top: 2px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    color: #263337;
+}
+
+
+/* =========================
+   DISPLAY
+========================= */
+
+.display-area {
+    width: 100%;
+    height: 108px;
+
+    padding: 8px 12px;
+
+    border-radius: 9px;
+
+    background: #4e6260;
+
+    border: 4px solid #667477;
+
+    box-shadow:
+        inset 2px 3px 8px rgba(0,0,0,0.55),
+        2px 3px 5px rgba(0,0,0,0.25);
+
+    overflow: hidden;
+}
+
+#status {
+    height: 18px;
+
+    display: flex;
+    gap: 12px;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    color: #17201f;
+}
+
+#shift-indicator,
+#alpha-indicator,
+#mode-indicator {
+    visibility: hidden;
+}
+
+#mode-indicator {
+    visibility: visible;
+}
+
+#display {
+    width: 100%;
+    height: 68px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    font-family: "Courier New", monospace;
+    font-size: clamp(25px, 7vw, 38px);
+    font-weight: bold;
+
+    color: #101918;
+
+    text-shadow: 0 1px 0 rgba(255,255,255,0.12);
+}
+
+
+/* =========================
+   TOP CONTROL BUTTONS
+========================= */
+
+.top-controls {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 13px;
+}
+
+.small-btn {
+    min-height: 38px;
+
+    border: 2px solid #586467;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        145deg,
+        #738083,
+        #c3cbcc
+    );
+
+    color: #182124;
+
+    font-size: 11px;
+    font-weight: 900;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 2px rgba(255,255,255,0.5);
+
+    cursor: pointer;
+}
+
+.small-btn:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        inset 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+
+/* =========================
+   REPLAY
+========================= */
+
+.replay-section {
+    width: 120px;
+    margin: 12px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.replay-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.replay-btn {
+    width: 32px;
+    height: 25px;
+
+    border: none;
+    background: transparent;
+
+    color: #263337;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.replay-center {
+    width: 64px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 3px solid #526064;
+
+    background:
+        linear-gradient(
+            145deg,
+            #738083,
+            #c1c9ca
+        );
+
+    color: #273134;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    box-shadow:
+        2px 3px 5px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.6);
+
+    cursor: pointer;
+}
+
+.replay-btn:active,
+.replay-center:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   SCIENTIFIC BUTTONS
+========================= */
+
+.scientific-keys {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 7px;
+
+    margin-top: 7px;
+}
+
+.function-key,
+.memory-key,
+.bracket-key {
+    min-height: 39px;
+
+    border: 2px solid #536064;
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #20282b,
+            #596467
+        );
+
+    color: #f0f3f3;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.35),
+        inset 1px 1px 2px rgba(255,255,255,0.2);
+
+    cursor: pointer;
+}
+
+.function-key:active,
+.memory-key:active,
+.bracket-key:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        inset 2px 2px 4px rgba(0,0,0,0.35);
+}
+
+
+/* =========================
+   MAIN KEYBOARD
+========================= */
+
+.main-keyboard {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   NUMBER KEYS
+========================= */
+
+.number-key {
+    min-height: 48px;
+
+    border: 2px solid #7a8587;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f3f4f3,
+            #bdc4c4
+        );
+
+    color: #1b2528;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.8);
+
+    cursor: pointer;
+}
+
+.number-key:active {
+    transform: translateY(2px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #b9c0c0,
+            #e4e6e5
+        );
+}
+
+
+/* =========================
+   OPERATOR KEYS
+========================= */
+
+.operator-key {
+    min-height: 48px;
+
+    border: 2px solid #777f80;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f2f1,
+            #b9c0c0
+        );
+
+    color: #101719;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.8);
+
+    cursor: pointer;
+}
+
+.operator-key:active {
+    transform: translateY(2px);
+}
+
+
+/* =========================
+   DELETE / AC
+========================= */
+
+.delete-key,
+.clear-key {
+    min-height: 48px;
+
+    border: 2px solid #6d7374;
+    border-radius: 11px;
+
+    color: #171b1c;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.7);
+
+    cursor: pointer;
+}
+
+.delete-key {
+    background:
+        linear-gradient(
+            145deg,
+            #f0f1ef,
+            #bdc2c2
+        );
+}
+
+.clear-key {
+    background:
+        linear-gradient(
+            145deg,
+            #e8a16e,
+            #c86c3c
+        );
+
+    color: #1e1510;
+}
+
+.delete-key:active,
+.clear-key:active {
+    transform: translateY(2px);
+}
+
+
+/* =========================
+   EQUALS
+========================= */
+
+.equals-key {
+    min-height: 48px;
+
+    border: 2px solid #596365;
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d7dddd,
+            #8f999a
+        );
+
+    color: #11191b;
+
+    font-size: 20px;
+    font-weight: 900;
+
+    box-shadow:
+        2px 3px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.7);
+
+    cursor: pointer;
+}
+
+.equals-key:active {
+    transform: translateY(2px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.calculator-footer {
+    margin-top: 14px;
+
+    display: flex;
+    justify-content: space-around;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    color: #394447;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   BUTTON GENERAL
+========================= */
+
+button {
+    font-family: inherit;
+
+    user-select: none;
+    touch-action: manipulation;
+
+    outline: none;
+}
+
+button:focus-visible {
+    outline: 2px solid #263b40;
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 8px;
+        align-items: flex-start;
+    }
+
+    .calculator {
+        width: 100%;
+        max-width: 420px;
+
+        padding: 14px;
+
+        border-radius: 24px;
+    }
+
+    .display-area {
+        height: 100px;
+    }
+
+    #display {
+        font-size: 28px;
+    }
+
+    .scientific-keys,
+    .main-keyboard {
+        gap: 5px;
+    }
+
+    .function-key,
+    .memory-key,
+    .bracket-key {
+        min-height: 36px;
+        font-size: 9px;
+    }
+
+    .number-key,
+    .operator-key,
+    .delete-key,
+    .clear-key,
+    .equals-key {
+        min-height: 45px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL SCREEN
+========================= */
+
+@media (max-width: 350px) {
+
+    .calculator {
+        padding: 10px;
+    }
+
+    .scientific-keys,
+    .main-keyboard {
+        gap: 4px;
+    }
+
+    .function-key,
+    .memory-key,
+    .bracket-key {
+        font-size: 8px;
+    }
+
+    .number-key {
+        font-size: 16px;
+    }
+}
